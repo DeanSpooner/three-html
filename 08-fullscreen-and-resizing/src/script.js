@@ -14,7 +14,7 @@ const scene = new THREE.Scene();
 /**
  * Object
  */
-const geometry = new THREE.ConeBufferGeometry(1, 2, 12);
+const geometry = new THREE.DodecahedronBufferGeometry(1, 1);
 const material = new THREE.MeshNormalMaterial({
   flatShading: true,
 });
@@ -86,10 +86,12 @@ controls.enableDamping = true;
  * Renderer
  */
 const renderer = new THREE.WebGLRenderer({
+  alpha: true,
   canvas: canvas,
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setClearColor(0x000000, 0);
 
 /**
  * Animate
